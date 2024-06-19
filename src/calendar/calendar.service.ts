@@ -7,6 +7,7 @@ import { format, addDays } from 'date-fns';
 @Injectable()
 export class CalendarService {
     private readonly logger = new Logger(CalendarService.name)
+
     async getToday() {
         const lunarDate = new LunarDate();
         return lunarDate;
@@ -17,7 +18,7 @@ export class CalendarService {
         return lunarDate;
     }
 
-    @Cron(CronExpression.EVERY_DAY_AT_7AM)
+    @Cron(CronExpression.EVERY_DAY_AT_10AM)
     async handleCron() {
         const today = new Date();
         const futureDate = addDays(today, 7);
@@ -42,4 +43,3 @@ export class CalendarService {
         }
     }
 }
-
