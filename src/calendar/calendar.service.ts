@@ -18,7 +18,7 @@ export class CalendarService {
         return lunarDate;
     }
 
-    @Cron(CronExpression.EVERY_DAY_AT_10AM)
+    @Cron(CronExpression.EVERY_DAY_AT_7AM)
     async handleCron() {
         const today = new Date();
         const futureDate = addDays(today, 7);
